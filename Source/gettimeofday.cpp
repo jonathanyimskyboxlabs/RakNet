@@ -24,7 +24,7 @@
 
 int gettimeofday(struct timeval *tv, struct timezone *tz)
 {
-#if defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)
+#if defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT) || !defined(_CRT_USE_WINAPI_FAMILY_DESKTOP_APP)
 	// _tzset not supported
 	(void) tv;
 	(void) tz;
